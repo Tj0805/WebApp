@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../cssFolder/style.css">
+    <meta name= "viewport" content="width=device-width, initial-scale=1.0">
+    <script></script>
+    <title>Welcome to CoffeeBrew</title>
+</head>
+<body>
+   <header>
+    <nav>
+       <div class="row clearfix">
+         <a href="../index.html"><img src="../image/bmt.png" class="logo"></a>
+           <ul class="main-nav animated slideInDown" id="check-class">
+                <li><a href="howTOrder.html">HOW TO ORDER</a></li>
+                <li><a href="location.html">Location</a></li>
+                <li><a href="login.html">SIGN UP</a></li>
+           </ul>
+         <a href="#" class="mobile-icon" onclick="slideshow()"><i class="fa fa-bars"></i></a>
+        </div>
+    </nav>
+       <div class="main-content-header">
+         <div class="mapContainer">
+           <div class="someText"><h3>Coffee Brew Location</h3><br>
+           <p class="wor">Hi there, We see your looking for our whereabouts </p>
+           <br>
+           <p class="wor">We are currently located at NCI Mayor Square.</p><br>
+           <p class="wor">Look to your right we've put it on the a map</p></div>
+          <div id="map" id="mapPostion"> </div>      
+        </div>
+      </div>
+    </header> 
+    <script>
+      function initMap(){
+        //map options 
+        var options={
+          zoom:15,
+          center:{lat: 53.3490885, lng:-6.2429051}
+        }
+        //new map
+        var map=new 
+        google.maps.Map(document.getElementById('map'),options);
+        //add marker
+        var marker = new google.maps.Marker({
+          position: {lat: 53.3490885, lng:-6.2429051},
+          map:map,
+          icon:'../image/coffeIcon.png'
+        });
+//        
+        var infoWindow=new google.maps.InfoWindow({
+          content:'<h1 style="color:black; font="Courier;">Coffee Brew</h1></br><p style="color:black">Nci branch<p/></br><a href="https://www.google.com/maps/dir//nci/@53.3486989,-6.313101,12z/data=!3m1!4b1!4m9!4m8!1m1!4e2!1m5!1m1!1s0x48670e8cd86e97e7:0x6d51b774ee7fa935!2m2!1d-6.2430615!2d53.3487194"><p style="color:black">Address:  Mayor Street Lower, International Financial Services Centre, Dublin</p></a></br><p style="color:black">Website: </p><a href="../index.html"><p style="color:black">CoffeeBrew.ie</p></a>'
+        }); 
+        
+        marker.addListener('click',function(){
+          infoWindow.open(map, marker);
+        });
+        
+      }
+  </script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCivSNF_YjKu4VVT_atDKW2vwz8ItDoVo&callback=initMap">
+  </script>
+</body>
+</html>

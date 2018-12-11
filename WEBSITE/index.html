@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="cssFolder/style2.css">
+    <meta name= "viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoffeeBrew</title>
+</head>
+<body>
+   <header>
+    <nav>
+       <div class="row clearfix">
+           <img src="image/bmt.png" class="logo">
+           
+           <ul class="main-nav animated slideInDown" id="check-class">
+                <li><a href="pages/howTOrder.html">HOW TO ORDER</a></li>
+                <li><a href="pages/location.html">LOCATION</a></li>
+                <li><a href="pages/login.html">SIGN UP</a></li>
+           </ul>
+           <a href="#" class="mobile-icon" onclick="slideshow()"><i class="fa fa-bars"></i></a>
+        </div>
+       </nav>
+       <div class="main-content-header">
+       <h1> WELCOME TO <span>COFFEEBREW</span><br>
+           HOME OF THE WORLD'S BEST COFFEE</h1>
+         <a href="pages/products.html"><button class="btn btn-full">Click Here To Order</button></a>
+         <a href="pages/location.html"><button class="btn btn-nav">Want To See More?</button> </a>
+       </div>
+    </header> 
+   <script type="text/javascript">
+    function slideshow(){
+        var x = document.getElementById('check-class');
+        if(x.style.display === "none"){
+            x.style.display="block";
+        }else{
+            x.style.display="none";
+        }
+    }
+    
+    </script>
+</body>
+</html>

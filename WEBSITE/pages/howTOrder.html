@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../cssFolder/style.css">
+    <meta name= "viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoffeeBrew</title>
+</head>
+<body>
+   <header>
+    <nav>
+       <div class="row clearfix">
+         <a href="../index.html"><img src="../image/bmt.png" class="logo"></a>
+           <ul class="main-nav animated slideInDown" id="check-class">
+                <li><a href="../pages/howTOrder.html">HOW TO ORDER</a></li>
+                <li><a href="../pages/location.html">Location</a></li>
+                <li><a href="login.html">SIGN UP</a></li>
+           </ul>
+         <a href="#" class="mobile-icon" onclick="slideshow()"><i class="fa fa-bars"></i></a>
+        </div>
+    </nav>
+       <div class="main-content-instructions">
+         <div class="manuel">
+          <h3>How to order</h3>
+          <ul>
+            <li>Step 1: Click button</li>
+            <li>Step 2: <p>Click on your desired drink <br> and follow further instructions</p></li>
+          </ul>  
+         </div>
+<!--         step 1-->
+         <div class="vids fade">
+         <video autoplay muted loop id="myVideo">
+          <source src="../image/step1.mov" type="video/mp4">
+        </video>
+         </div>
+         <div class="vids fade">
+         <video autoplay muted loop id="myVideo">
+          <source src="../image/step2.mov" type="video/mp4">
+        </video>
+         </div>
+         <p class="prevs">Previous Step</p>
+         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+         <a class="next" onclick="plusSlides(1)">&#10095;</a>
+         <p class="nexts">Next step</p>
+      </div>
+    </header> 
+    <script type="text/javascript">
+    function slideshow(){
+        var x = document.getElementById('check-class');
+        if(x.style.display === "none"){
+            x.style.display="block";
+        }else{
+            x.style.display="none";
+        }
+    }
+      
+      
+    var slideIndex = 1;
+    showSlides(slideIndex);
+    function plusSlides(n) {
+    showSlides(slideIndex += n);
+    }
+  function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("vids");
+  if (n > slides.length) {slideIndex = 1} 
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none"; 
+  }
+  slides[slideIndex-1].style.display = "block";
+    function setCurTime() { 
+    vid.currentTime=0;
+} 
+} 
+    
+
+    </script>
+</body>
+</html>
